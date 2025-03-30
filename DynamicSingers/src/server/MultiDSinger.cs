@@ -47,8 +47,7 @@ namespace DynamicSingers {
                 return;
             }
             if (Inputs[WRITE].On) {
-                int index = ReadNoteIn()+ReadOffset();
-                if (index >= 128) return;
+                int index = (ReadNoteIn()+ReadOffset()) & 0x7f;
                 noteOnList[index] = (byte)(Inputs[STATE].On ? 1:0);
                 isDirty = true;
             }

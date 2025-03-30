@@ -34,5 +34,27 @@ SimpleDSinger:
             -
                 position: (2, 0.5, -0.5)
                 rotation: (-90, 0, 0)
+            # Offset in
+            -
+                position: (-1, 0.5, 0.5)
+                rotation: (90, 0, 0)
+            -
+                position: (-0.66, 0.5, 0.5)
+                rotation: (90, 0, 0)
+            -
+                position: (-0.33, 0.5, 0.5)
+                rotation: (90, 0, 0)
+            -
+                position: (0, 0.5, 0.5)
+                rotation: (90, 0, 0)
+            -
+                position: (0.33, 0.5, 0.5)
+                rotation: (90, 0, 0)
+            -
+                position: (0.66, 0.5, 0.5)
+                rotation: (90, 0, 0)
+            -
+                position: (1, 0.5, 0.5)
+                rotation: (90, 0, 0)
     clientCode: DynamicSingers.SimpleDSinger
     placingRules: Standard

@@ -19,7 +19,7 @@ namespace DynamicSingers {
         
         protected override void FrameUpdate() {
             bool pinState = GetInputState(7);
-            byte inNote = ReadNoteIn();
+            byte inNote = (byte)((ReadNoteIn()+ReadOffset())&0x7f);
             if (pinState && !currentlyPlaying || pinState && LastPlayedNote != inNote) {
                 if (LastPlayedNote != inNote) {
                     StopPlaying();
@@ -41,6 +41,15 @@ namespace DynamicSingers {
             for (int i = 0; i < 7; i++) {
                 output <<= 1;
                 output |= (byte)(GetInputState(i) ? 1:0);
+            }
+            return output;
+        }
+        
+        private byte ReadOffset() {
+            byte output = 0;
+            for (int i = 6; i >= 0; i--) {
+                output <<= 1;
+                output |= (byte)(GetInputState(i+8) ? 1:0);
             }
             return output;
         }
